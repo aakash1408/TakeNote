@@ -1,6 +1,11 @@
 # CI/CD Pipeline Project
 
 This repo conatins the code for a TakeNote application on which CI/CD is implemented.
+This is the CI/CD, implemeted in this project 
+
+![CI/CD](cicdImage/png)
+
+
 
 ## Tools used in CI/CD
 - Docker
