@@ -12,6 +12,7 @@ pipeline {
         REGISTRY_CREDENTIALS = credentials('docker-cred') // Jenkins Docker registry credentials
         GITHUB_TOKEN = credentials('github-token') // GitHub credentials for updating deployment files
         SONAR_AUTH_TOKEN = credentials('sonarqube') // SonarQube authentication token
+        PROJECT_KEY = "cicdproject"
     }
 
     stages {
@@ -39,7 +40,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
                     sh """
                     sonar-scanner \
-                    -Dsonar.projectKey=cicdproject \
+                    -Dsonar.projectKey=${PROJECT_KEY} \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=${SONAR_URL} \
                     -Dsonar.login=${SONAR_AUTH_TOKEN}
