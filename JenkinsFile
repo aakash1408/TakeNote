@@ -36,10 +36,10 @@ pipeline {
         stage('Static Code Analysis') {
             steps {
                 sh 'echo "Running SonarQube analysis..."'
-                withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_AUTH_TOKEN')]) {
+                withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
                     sh """
                     sonar-scanner \
-                    -Dsonar.projectKey=your-project-key \
+                    -Dsonar.projectKey=cicdproject \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=${SONAR_URL} \
                     -Dsonar.login=${SONAR_AUTH_TOKEN}
