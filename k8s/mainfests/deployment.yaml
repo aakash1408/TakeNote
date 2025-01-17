@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: takenote-deployment
+  labels:
+    app: takenote
+spec:
+  replicas: 1  # Set the number of replicas as needed
+  selector:
+    matchLabels:
+      app: takenote
+  template:
+    metadata:
+      labels:
+        app: takenote
+    spec:
+      containers:
+        - name: takenote
+          image: vibranium1/takenote:replaceImageTag  # Replace with your image tag
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
