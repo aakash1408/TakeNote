@@ -1,8 +1,17 @@
-# TakeNote
+# CI/CD Pipeline Project
 
-This repo 
+This repo conatins the code for a TakeNote application on which CI/CD is implemented.
 
-## Local Development
+## Tools used in CI/CD
+- Docker
+- Jenkins
+- Sonarqube 
+- ArgoCD
+- Kubernetes
+
+
+
+## Local Development for the TakeNote application
 
 Make sure you're on Go version 1.22+.
 
